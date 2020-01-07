@@ -20,12 +20,7 @@ service ApplicationUserService{
 	rpc UnlockUser(UserRequest) returns (UserMessageResponse);
 	rpc CheckUsernameAndEmail(CheckUsernameEmailRequest) returns (CheckUsernameAndEmailResponse);
 	
-	rpc AddUserToOrganization(UserToOrganizationRequest) returns  (UserMessageResponse);
-	rpc RemoveUserFromOrganization(UserToOrganizationRequest) returns  (UserMessageResponse);
-	rpc AddUserRoleToOrganization(UserRoleRequest) returns  (UserMessageResponse);
-	rpc AddUserRoleToOrganizationPart(UserRoleRequest) returns  (UserMessageResponse);
-	rpc RemoveUserRoleFromOrganization(UserRoleRequest) returns (UserMessageResponse);
-	rpc RemoveUserRoleFromOrganizationPart(UserRoleRequest) returns (UserMessageResponse);
+
 }
 
 message UserRequest{
