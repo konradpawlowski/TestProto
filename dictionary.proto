@@ -1,0 +1,68 @@
+syntax = "proto3";
+
+package Identityserver;
+import "google/protobuf/empty.proto";
+
+service DictionariesService{
+	rpc GetOrganizationType(google.protobuf.Empty) returns (OrganizationTypesResponse);
+	rpc GetOrganizationRole(google.protobuf.Empty) returns (OrganizationRolesResponse);
+	rpc GetOrganizationRoleByType(RoleByTypeRequest) returns (OrganizationRolesResponse);
+	rpc GetOrganizationPartType(google.protobuf.Empty) returns (OrganizationPartTypesResponse);
+	rpc GetOrganizationPartRole(google.protobuf.Empty) returns (OrganizationPartRolesResponse);
+	rpc GetOrganizationPartRoleByType(RoleByTypeRequest) returns (OrganizationPartRolesResponse);
+	rpc GetCompanyDetailType(google.protobuf.Empty) returns (CompanyDetailTypeRespone);
+	
+
+}
+
+
+
+message OrganizationTypeDto{
+	string type = 1;
+	string description = 2;
+}
+
+message OrganizationRoleDto{
+	string role = 1;
+	string type = 2;
+	string description = 3;
+}
+
+message OrganizationPartTypeDto{
+	string type = 1;
+	string description = 2;
+}
+
+message OrganizationPartRoleDto{
+	string role = 1;
+	string type = 2;
+	string description = 3;
+}
+
+message RoleByTypeRequest{
+	string type = 1;
+}
+message CompanyDetailTypeDto{
+	string type = 1;
+	string description = 2;
+}
+
+message OrganizationTypesResponse{
+	repeated OrganizationTypeDto organizationTypes = 1;
+}
+
+message OrganizationRolesResponse{
+	repeated OrganizationRoleDto organizationRoles = 1;
+}
+
+message OrganizationPartTypesResponse{
+	repeated OrganizationPartTypeDto organizationPartTypes = 1;
+}
+
+message OrganizationPartRolesResponse{
+	repeated OrganizationPartRoleDto organizationPartRoles = 1;
+}
+
+message CompanyDetailTypeRespone{
+	repeated CompanyDetailTypeDto organizationPartRoles = 1;
+}
